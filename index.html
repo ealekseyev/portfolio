@@ -645,30 +645,44 @@
         /* â”€â”€â”€ PROJECTS â”€â”€â”€ */
         #projects { background: var(--navy); }
 
-        .project-category { margin-bottom: 52px; }
-        .project-category:last-child { margin-bottom: 0; }
-
-        .project-category-header {
+        .project-tabs {
+            width: fit-content;
             display: flex;
-            align-items: center;
-            gap: 16px;
-            margin-bottom: 24px;
+            flex-wrap: wrap;
+            gap: 4px;
+            padding: 5px;
+            margin: -28px 0 32px;
+            background: var(--navy-mid);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 14px;
         }
 
-        .project-category-label {
+        .project-tab {
+            background: transparent;
+            border: 1px solid transparent;
+            border-radius: 10px;
+            color: var(--text-muted);
+            cursor: pointer;
             font-family: 'Inter', sans-serif;
             font-size: 0.72rem;
             font-weight: 700;
-            letter-spacing: 4px;
-            color: var(--text-muted);
+            letter-spacing: 2px;
+            padding: 11px 18px;
             text-transform: uppercase;
-            white-space: nowrap;
+            transition: border-color 0.2s, background 0.2s, color 0.2s;
         }
 
-        .project-category-line {
-            flex: 1;
-            height: 1px;
-            background: rgba(255,255,255,0.08);
+        .project-tab:hover,
+        .project-tab[aria-pressed="true"] {
+            background: var(--blue);
+            border-color: var(--blue);
+            color: var(--white);
+            box-shadow: 0 3px 10px rgba(58,123,213,0.25);
+        }
+
+        .project-tab:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 3px;
         }
 
         .projects-grid {
@@ -1125,21 +1139,19 @@
                             <div class="timeline-title">Software Engineer</div>
                             <div class="timeline-org">DeGirum Corp. &middot; Santa Clara, CA</div>
                             <ul class="timeline-bullets">
-                                <li>Built production vehicle ReID pipeline (YOLO + OSNet + PaddleOCR) on live RTSP streams with proximity-zone alerting; deployed on DeGirum Orca1 edge accelerator</li>
-                                <li>Designed agentic DAG execution runtime enabling LLMs to dynamically orchestrate structured tool-call graphs for centralized multi-site AI monitoring workflows</li>
-                                <li>Own several core subsystems in a novel media indexer project including logging, telemetry, folder monitoring, file identity and tracking, and API server components</li>
-                                <li>Developed multi-camera face recognition attendance system using ArcFace embeddings and LanceDB vector search on RTSP streams</li>
+                                <li>Built production vehicle ReID pipeline (YOLO + OSNet + PaddleOCR) on live RTSP streams with proximity-zone alerting; deployed and benchmarked on DeGirum Orca1 edge accelerator</li>
+                                <li>Developed multi-camera face recognition attendance system using ArcFace embeddings + LanceDB vector store; designed for production access control and retail tracking use cases</li>
+                                <li>Led R&amp;D evaluation of VLMs (Qwen3.5, SmolVLM2, Gemma4 E2B, LLaVA, InternVL3.5) for retail anomaly detection; evaluated Vulkan, OpenVINO, CPU, and BLAS backends on Llama.cpp; optimized lightweight VLM serving achieving 700ms TTFT on laptop CPU</li>
                             </ul>
                         </div>
                         <div class="timeline-item">
                             <span class="timeline-date">Sept 2025 &ndash; March 2026</span>
-                            <div class="timeline-title">Mechatronics Engineer</div>
+                            <div class="timeline-title">Mechatronics Engineer Intern</div>
                             <div class="timeline-org">Beagle Technology, Inc. &middot; Dublin, CA</div>
                             <ul class="timeline-bullets">
+                                <li>Co-designed CV pipeline for RealSense camera-based depth and height estimation of grapevines to run on Jetson Orin Nano hardware; emphasis on robust edge-case handling and temporal filtering</li>
+                                <li>Sole firmware owner (C++): rewrote I/O PCB codebase supporting 4 PCB revisions, 2 machine types, 12-channel relay + 5-channel proportional valve; designed CAN bus communication layer to NVIDIA Jetson</li>
                                 <li>Contributed to R&amp;D and field deployment of prototype agricultural robotics products, shipping computer vision improvements and PID tuning directly to automated machinery at customer sites</li>
-                                <li>Sole firmware owner in C++: rewrote I/O PCB codebase to support 4 PCB revisions, 2 machine types, and 12-channel relay plus 5-channel proportional valve control</li>
-                                <li>Designed CAN bus communication layer to NVIDIA Jetson and built remote MJPEG streaming service with fleet monitoring, GPS tracking, and real-time device health</li>
-                                <li>Deployed query optimizations in fleet monitoring dashboard, reducing load times by 90%</li>
                             </ul>
                         </div>
                     </div>
@@ -1154,7 +1166,7 @@
                             <div class="timeline-title">B.S. Computer Engineering</div>
                             <div class="timeline-org">San Jose State University &middot; San Jose, CA</div>
                             <ul class="timeline-bullets">
-                                <li>3.6 GPA</li>
+                                <li>3.7 GPA</li>
                                 <li>Senior capstone sponsored by Texas Instruments</li>
                             </ul>
                         </div>
@@ -1170,13 +1182,14 @@
         <div class="container">
             <span class="section-eyebrow fade-in">Projects</span>
             <h2 class="section-heading fade-in">Notable Projects</h2>
+            <div class="project-tabs fade-in" role="group" aria-label="Project categories">
+                <button class="project-tab" id="ml-cv-tab" type="button" aria-pressed="true" aria-controls="ml-cv-projects">ML &amp; Computer Vision</button>
+                <button class="project-tab" id="embedded-tab" type="button" aria-pressed="false" aria-controls="embedded-projects">Embedded</button>
+                <button class="project-tab" id="networking-tab" type="button" aria-pressed="false" aria-controls="networking-projects">Other</button>
+            </div>
 
-            <!-- Machine Learning -->
-            <div class="project-category fade-in">
-                <div class="project-category-header">
-                    <span class="project-category-label">Machine Learning</span>
-                    <div class="project-category-line"></div>
-                </div>
+            <!-- ML & Computer Vision -->
+            <div class="project-category" id="ml-cv-projects">
                 <div class="projects-grid">
                     <div class="project-card">
                         <div class="project-year">2026</div>
@@ -1189,6 +1202,31 @@
                             <span class="tech-tag">Inference Runtime</span>
                         </div>
                         <a href="https://github.com/ealekseyev/TensorRTWrapper" class="project-link" target="_blank" rel="noopener">GitHub &rarr;</a>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-year">2026</div>
+                        <div class="project-title">Vehicle Re-Identification Monitor</div>
+                        <div class="project-desc">Real-time parking-lot RTSP monitoring deployed on a DeGirum Orca1 accelerator. YOLOv8n detects vehicles and people, while OSNet and a saved vehicle embedding identify my car. Parking activity and nearby pedestrians trigger Telegram notifications with a snapshot. A ring buffer saves the full event to disk, including five seconds before and after the trigger.</div>
+                        <div class="project-tags">
+                            <span class="tech-tag">YOLOv8n</span>
+                            <span class="tech-tag">OSNet</span>
+                            <span class="tech-tag">RTSP</span>
+                            <span class="tech-tag">DeGirum Orca1</span>
+                            <span class="tech-tag">Telegram</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-year">2026</div>
+                        <div class="project-title">MarketplaceBot</div>
+                        <div class="project-desc">Automates Facebook Marketplace buyer conversations with LLM-based message classification, reply generation, negotiation, and safety handoffs. Uses Playwright for browser integration, SQLite for chat policy and state, and Telegram for seller notifications and input when human involvement is needed.</div>
+                        <div class="project-tags">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">LLMs</span>
+                            <span class="tech-tag">Playwright</span>
+                            <span class="tech-tag">SQLite</span>
+                            <span class="tech-tag">Telegram</span>
+                        </div>
+                        <a href="https://github.com/ealekseyev/MarketplaceBot" class="project-link" target="_blank" rel="noopener">GitHub &rarr;</a>
                     </div>
                     <div class="project-card">
                         <div class="project-year">2025</div>
@@ -1235,25 +1273,11 @@
                         </div>
                         <a href="https://github.com/ealekseyev/EmailAnalyzer" class="project-link" target="_blank" rel="noopener">GitHub &rarr;</a>
                     </div>
-                    <div class="project-card">
-                        <div class="project-year">2025</div>
-                        <div class="project-title">SentimentAnalysis</div>
-                        <div class="project-desc">A 2-layer PyTorch neural network trained on the Stanford IMDB dataset to classify sentiment from input text.</div>
-                        <div class="project-tags">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">PyTorch</span>
-                        </div>
-                        <a href="https://github.com/ealekseyev/SentimentAnalysis" class="project-link" target="_blank" rel="noopener">GitHub &rarr;</a>
-                    </div>
                 </div>
             </div>
 
             <!-- Embedded Systems -->
-            <div class="project-category fade-in">
-                <div class="project-category-header">
-                    <span class="project-category-label">Embedded Systems</span>
-                    <div class="project-category-line"></div>
-                </div>
+            <div class="project-category" id="embedded-projects" hidden>
                 <div class="projects-grid">
                     <div class="project-card">
                         <span class="project-badge badge-gold">TI Sponsored</span>
@@ -1347,11 +1371,7 @@
                 </div>
             </div>
             <!-- Software & Networking -->
-            <div class="project-category fade-in">
-                <div class="project-category-header">
-                    <span class="project-category-label">Software & Networking</span>
-                    <div class="project-category-line"></div>
-                </div>
+            <div class="project-category" id="networking-projects" hidden>
                 <div class="projects-grid">
                     <div class="project-card">
                         <div class="project-year">2026</div>
@@ -1389,24 +1409,6 @@
                         </div>
                         <a href="https://github.com/ealekseyev/packsniff" class="project-link" target="_blank" rel="noopener">GitHub &rarr;</a>
                     </div>
-                    <div class="project-card">
-                        <div class="project-year">2020</div>
-                        <div class="project-title">TCPFileTransfer</div>
-                        <div class="project-desc">A basic, unencrypted TCP File Transfer program - custom made to be fast and versatile</div>
-                        <div class="project-tags">
-                            <span class="tech-tag">Java</span>
-                        </div>
-                        <a href="https://github.com/ealekseyev/TCPFileTransfer" class="project-link" target="_blank" rel="noopener">GitHub &rarr;</a>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-year">2020</div>
-                        <div class="project-title">GlobalSystemManager</div>
-                        <div class="project-desc">A computer management system written in java for Unices (to be used with a portable JIT)</div>
-                        <div class="project-tags">
-                            <span class="tech-tag">Java</span>
-                        </div>
-                        <a href="https://github.com/ealekseyev/GlobalSystemManager" class="project-link" target="_blank" rel="noopener">GitHub &rarr;</a>
-                    </div>
                 </div>
             </div>
 
@@ -1435,9 +1437,11 @@
                         <span class="skill-tag highlight-blue">TI MSPM0</span>
                         <span class="skill-tag highlight-blue">TI IWR68xx Radar</span>
                         <span class="skill-tag">CAN Bus / LIN</span>
+                        <span class="skill-tag">PID Control</span>
                         <span class="skill-tag">UART / SPI</span>
                         <span class="skill-tag">ESP32</span>
                         <span class="skill-tag">NVIDIA Jetson Orin</span>
+                        <span class="skill-tag">Intel RealSense</span>
                         <span class="skill-tag">DeGirum Orca1</span>
                         <span class="skill-tag">PCB Layout</span>
                         <span class="skill-tag">AMD Vivado</span>
@@ -1454,6 +1458,17 @@
                         <span class="skill-tag">ONNX</span>
                         <span class="skill-tag">OpenVINO</span>
                         <span class="skill-tag">Model Quantization</span>
+                        <span class="skill-tag">Model Distillation</span>
+                        <span class="skill-tag">CLIP</span>
+                        <span class="skill-tag">Transformers</span>
+                        <span class="skill-tag">RAG</span>
+                        <span class="skill-tag">YOLO</span>
+                        <span class="skill-tag">DINOv2</span>
+                        <span class="skill-tag">SAM</span>
+                        <span class="skill-tag">RF-DETR</span>
+                        <span class="skill-tag">Autodistill</span>
+                        <span class="skill-tag">Vulkan</span>
+                        <span class="skill-tag">BLAS</span>
                     </div>
                 </div>
                 <div class="skill-group fade-in">
@@ -1462,11 +1477,22 @@
                         <span class="skill-tag">Linux</span>
                         <span class="skill-tag">Git</span>
                         <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">OpenAPI</span>
                         <span class="skill-tag">FFmpeg</span>
+                        <span class="skill-tag">Grafana Loki</span>
                         <span class="skill-tag">LangGraph</span>
                         <span class="skill-tag">scikit-learn</span>
                         <span class="skill-tag">PostgreSQL / SQLite</span>
                         <span class="skill-tag">LanceDB</span>
+                        <span class="skill-tag">Qdrant</span>
+                    </div>
+                </div>
+                <div class="skill-group fade-in">
+                    <h4>LLM Tooling &amp; NLP</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">OpenAI-Compatible APIs</span>
+                        <span class="skill-tag">Llama.cpp</span>
+                        <span class="skill-tag">Edge-Optimized VLM Inference</span>
                     </div>
                 </div>
                 <div class="skill-group fade-in">
@@ -1599,6 +1625,19 @@
         }, { threshold: 0.1 });
 
         fadeEls.forEach(el => fadeObserver.observe(el));
+
+        // 5. Project category tabs
+        const projectTabs = document.querySelectorAll('.project-tab');
+
+        projectTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                projectTabs.forEach(button => {
+                    const selected = button === tab;
+                    button.setAttribute('aria-pressed', selected);
+                    document.getElementById(button.getAttribute('aria-controls')).hidden = !selected;
+                });
+            });
+        });
 
     </script>
 </body>
