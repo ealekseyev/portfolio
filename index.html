@@ -14,7 +14,7 @@
             --navy-light: #1e3060;
             --blue:       #3a7bd5;
             --blue-dark:  #2961b0;
-            --gold:       #d4af37;
+            --gold:       #8cc8ff;
             --white:      #ffffff;
             --text-light: #c8cdd8;
             --text-muted: #8a92a6;
@@ -90,7 +90,7 @@
         }
 
         .nav-links .resume-pill:hover {
-            background: rgba(212,175,55,0.12);
+            background: rgba(140,200,255,0.12);
             transform: translateY(-1px);
         }
 
@@ -230,7 +230,7 @@
         }
 
         .btn-resume:hover {
-            background: rgba(212,175,55,0.12);
+            background: rgba(140,200,255,0.12);
             transform: translateY(-2px);
         }
 
@@ -379,7 +379,7 @@
 
         .stat-tile {
             background: var(--navy-light);
-            border: 1px solid rgba(212,175,55,0.2);
+            border: 1px solid rgba(140,200,255,0.2);
             padding: 28px 20px;
             text-align: center;
             border-radius: 4px;
@@ -717,7 +717,7 @@
         .project-card:hover::before { transform: scaleX(1); }
 
         .project-card:hover {
-            border-color: rgba(212,175,55,0.3);
+            border-color: rgba(140,200,255,0.3);
             transform: translateY(-4px);
         }
 
@@ -847,7 +847,7 @@
         }
 
         .skill-tag.highlight-gold {
-            border-color: rgba(212,175,55,0.5);
+            border-color: rgba(140,200,255,0.5);
             color: var(--gold);
         }
 
@@ -912,7 +912,7 @@
         /* â”€â”€â”€ CONTACT â”€â”€â”€ */
         #contact {
             background: linear-gradient(135deg, var(--blue) 0%, var(--navy) 65%);
-            border-top: 2px dashed rgba(212,175,55,0.35);
+            border-top: 2px dashed rgba(140,200,255,0.35);
             text-align: center;
         }
 
@@ -1201,20 +1201,8 @@
                 <div class="projects-grid">
                     <div class="project-card">
                         <div class="project-year">2026</div>
-                        <div class="project-title">TensorRTWrapper</div>
-                        <div class="project-desc">C++ wrapper around the TensorRT runtime for production inference services. Handles model runtime setup, hardware inference execution, and job queuing so callers can submit inference work without managing low-level TensorRT lifecycle details directly.</div>
-                        <div class="project-tags">
-                            <span class="tech-tag">C++</span>
-                            <span class="tech-tag">TensorRT</span>
-                            <span class="tech-tag">CUDA</span>
-                            <span class="tech-tag">Inference Runtime</span>
-                        </div>
-                        <a href="https://github.com/ealekseyev/TensorRTWrapper" class="project-link" target="_blank" rel="noopener">GitHub &rarr;</a>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-year">2026</div>
                         <div class="project-title">Vehicle Re-Identification Monitor</div>
-                        <div class="project-desc">Real-time parking-lot RTSP monitoring deployed on a DeGirum Orca1 accelerator. YOLOv8n detects vehicles and people, while OSNet and a saved vehicle embedding identify my car. Parking activity and nearby pedestrians trigger Telegram notifications with a snapshot. A ring buffer saves the full event to disk, including five seconds before and after the trigger.</div>
+                        <div class="project-desc">Edge-deployed vehicle re-identification and proximity monitoring for live camera feeds. Combines object detection and appearance embeddings to recognize a target vehicle and detect nearby pedestrian activity, with event-based alerts and video capture. Runs on a DeGirum Orca1 accelerator.</div>
                         <div class="project-tags">
                             <span class="tech-tag">YOLOv8n</span>
                             <span class="tech-tag">OSNet</span>
@@ -1225,8 +1213,32 @@
                     </div>
                     <div class="project-card">
                         <div class="project-year">2026</div>
+                        <div class="project-title">TensorRTWrapper</div>
+                        <div class="project-desc">C++ inference runtime built on NVIDIA TensorRT, with model lifecycle management, GPU execution, and queued job submission behind a unified API for inference services.</div>
+                        <div class="project-tags">
+                            <span class="tech-tag">C++</span>
+                            <span class="tech-tag">TensorRT</span>
+                            <span class="tech-tag">CUDA</span>
+                            <span class="tech-tag">Inference Runtime</span>
+                        </div>
+                        <a href="https://github.com/ealekseyev/TensorRTWrapper" class="project-link" target="_blank" rel="noopener">GitHub &rarr;</a>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-year">2025</div>
+                        <div class="project-title">Add Spice</div>
+                        <div class="project-desc">Video intensity scoring model combining DINOv2 visual features, a temporal transformer, and a ranking head trained with RankNet loss. Developed the annotation tools and training pipeline, targeting real-time inference on an RTX 3050.</div>
+                        <div class="project-tags">
+                            <span class="tech-tag">DinoV2</span>
+                            <span class="tech-tag">Transformer</span>
+                            <span class="tech-tag">PyTorch</span>
+                            <span class="tech-tag">RankNet</span>
+                        </div>
+                        <a href="https://github.com/ealekseyev/AddSpice" class="project-link" target="_blank" rel="noopener">GitHub &rarr;</a>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-year">2026</div>
                         <div class="project-title">MarketplaceBot</div>
-                        <div class="project-desc">Automates Facebook Marketplace buyer conversations with LLM-based message classification, reply generation, negotiation, and safety handoffs. Uses Playwright for browser integration, SQLite for chat policy and state, and Telegram for seller notifications and input when human involvement is needed.</div>
+                        <div class="project-desc">LLM-driven automation for Facebook Marketplace buyer conversations, including intent classification, negotiation, and seller handoff. Integrates browser automation with persistent conversation state, response policies, and seller notifications.</div>
                         <div class="project-tags">
                             <span class="tech-tag">Python</span>
                             <span class="tech-tag">LLMs</span>
@@ -1238,20 +1250,8 @@
                     </div>
                     <div class="project-card">
                         <div class="project-year">2025</div>
-                        <div class="project-title">Add Spice</div>
-                        <div class="project-desc">Designed a neural network with DinoV2 backbone, temporal transformer embedder, and dense head with RankNet loss to objectively rate intensity 0-10 from GoPro clips for real-time evaluation on RTX 3050. Built dataset annotation tooling and an end-to-end training pipeline with augmentation and checkpointing.</div>
-                        <div class="project-tags">
-                            <span class="tech-tag">DinoV2</span>
-                            <span class="tech-tag">Transformer</span>
-                            <span class="tech-tag">PyTorch</span>
-                            <span class="tech-tag">RankNet</span>
-                        </div>
-                        <a href="https://github.com/ealekseyev/AddSpice" class="project-link" target="_blank" rel="noopener">GitHub &rarr;</a>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-year">2025</div>
                         <div class="project-title">ShakespeareLM</div>
-                        <div class="project-desc">Built a decoder-based language model in PyTorch, trained on Shakespeare, Kafka, and Dostoevsky corpuses. The model achieved basic generalization and internalized grammatical and punctuation conventions.</div>
+                        <div class="project-desc">Decoder-based language model implemented in PyTorch and trained on literary corpora from Shakespeare, Kafka, and Dostoevsky for autoregressive text generation.</div>
                         <div class="project-tags">
                             <span class="tech-tag">PyTorch</span>
                             <span class="tech-tag">Transformers</span>
@@ -1260,26 +1260,26 @@
                         <a href="https://github.com/ealekseyev/ShakespeareLM" class="project-link" target="_blank" rel="noopener">GitHub &rarr;</a>
                     </div>
                     <div class="project-card">
-                        <div class="project-year">2023</div>
-                        <div class="project-title">AI Indoor Localization</div>
-                        <div class="project-desc">ESP32 reads nearby router signal strengths and feeds them into a custom TensorFlow model to predict indoor location. Decent accuracy without any dedicated hardware.</div>
-                        <div class="project-tags">
-                            <span class="tech-tag">ESP32</span>
-                            <span class="tech-tag">TensorFlow</span>
-                            <span class="tech-tag">Python</span>
-                        </div>
-                        <a href="https://github.com/ealekseyev/whereami" class="project-link" target="_blank" rel="noopener">GitHub &rarr;</a>
-                    </div>
-                    <div class="project-card">
                         <div class="project-year">2026</div>
                         <div class="project-title">EmailAnalyzer</div>
-                        <div class="project-desc">Uses BERT and heuristics with a custom PyTorch head to analyze whether an email is relevant enough for an agent to relay to a user.</div>
+                        <div class="project-desc">Email relevance classifier combining BERT representations, a custom PyTorch classification head, and heuristic filters to prioritize messages for an automated assistant.</div>
                         <div class="project-tags">
                             <span class="tech-tag">Python</span>
                             <span class="tech-tag">BERT</span>
                             <span class="tech-tag">PyTorch</span>
                         </div>
                         <a href="https://github.com/ealekseyev/EmailAnalyzer" class="project-link" target="_blank" rel="noopener">GitHub &rarr;</a>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-year">2023</div>
+                        <div class="project-title">AI Indoor Localization</div>
+                        <div class="project-desc">Indoor localization using Wi-Fi signal fingerprints collected by an ESP32 and a TensorFlow model trained to predict location from nearby access-point signal strengths.</div>
+                        <div class="project-tags">
+                            <span class="tech-tag">ESP32</span>
+                            <span class="tech-tag">TensorFlow</span>
+                            <span class="tech-tag">Python</span>
+                        </div>
+                        <a href="https://github.com/ealekseyev/whereami" class="project-link" target="_blank" rel="noopener">GitHub &rarr;</a>
                     </div>
                 </div>
             </div>
@@ -1288,33 +1288,9 @@
             <div class="project-category" id="embedded-projects" hidden>
                 <div class="projects-grid">
                     <div class="project-card">
-                        <span class="project-badge badge-gold">TI Sponsored</span>
-                        <div class="project-year">2026</div>
-                        <div class="project-title">TI Radar Fusion System</div>
-                        <div class="project-desc">Served as scrum master and engineering lead for Texas Instruments sponsored senior capstone. Architected a multi-node radar fusion pipeline normalizing IWR6843AOP track data across 3 distributed sensor nodes into standardized JSON packets for cloud transmission.</div>
-                        <div class="project-tags">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">IWR6843AOP</span>
-                            <span class="tech-tag">RF / Radar</span>
-                            <span class="tech-tag">JSON</span>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-year">2026</div>
-                        <div class="project-title">MSPM0-CAN-controller</div>
-                        <div class="project-desc">MCP2515 CAN Transceiver Driver for MSPM0G3507 TI Microcontroller.</div>
-                        <div class="project-tags">
-                            <span class="tech-tag">TI MSPM0</span>
-                            <span class="tech-tag">MCP2515</span>
-                            <span class="tech-tag">SPI</span>
-                            <span class="tech-tag">RTOS</span>
-                        </div>
-                        <a href="https://github.com/ealekseyev/MSPM0-CAN-controller" class="project-link" target="_blank" rel="noopener">GitHub &rarr;</a>
-                    </div>
-                    <div class="project-card">
                         <div class="project-year">2025</div>
                         <div class="project-title">E90 Remote Start</div>
-                        <div class="project-desc">ESP32-based CAN bus controller interfacing with a BMW E90 K-CAN network for real-time telemetry and control. Reverse engineered 20+ CAN IDs covering engine RPM, throttle, climate, central locking, and remote start, with custom hardware for the start/stop system.</div>
+                        <div class="project-desc">BMW E90 telemetry and remote-start controller integrating an ESP32 with the vehicle's K-CAN network. Reverse-engineered 20+ CAN message IDs for powertrain telemetry, climate, and central locking, and developed custom hardware to interface with the start/stop system.</div>
                         <div class="project-tags">
                             <span class="tech-tag">ESP32</span>
                             <span class="tech-tag">CAN Bus</span>
@@ -1324,30 +1300,21 @@
                         <a href="https://github.com/ealekseyev/E90RemoteStart" class="project-link" target="_blank" rel="noopener">GitHub &rarr;</a>
                     </div>
                     <div class="project-card">
-                        <div class="project-year">2025</div>
-                        <div class="project-title">Smart Car Unlock</div>
-                        <div class="project-desc">Retrofit keyless entry for a 2001 Mercedes C-class. ESP32-based system with secret knock detection and RFID key card scanning. Led the group project from design to deployment.</div>
+                        <span class="project-badge badge-gold">TI Sponsored</span>
+                        <div class="project-year">2026</div>
+                        <div class="project-title">TI Radar Fusion System</div>
+                        <div class="project-desc">Led engineering for a Texas Instruments-sponsored multi-node radar system. Designed the pipeline to normalize IWR6843AOP track data from three distributed sensors into a common format for cloud transmission.</div>
                         <div class="project-tags">
-                            <span class="tech-tag">ESP32</span>
-                            <span class="tech-tag">RFID</span>
-                            <span class="tech-tag">C++</span>
-                        </div>
-                        <a href="https://github.com/ealekseyev/SmartCarUnlock" class="project-link" target="_blank" rel="noopener">GitHub &rarr;</a>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-year">2022</div>
-                        <div class="project-title">Smart Football Analytics</div>
-                        <div class="project-desc">Football with accelerometer and gyroscope sensors measuring throw dynamics at 1000+ Hz. Wireless data transmission and real-time GUI displaying velocity, spin rate, and force metrics.</div>
-                        <div class="project-tags">
-                            <span class="tech-tag">Arduino</span>
-                            <span class="tech-tag">IMU</span>
                             <span class="tech-tag">Python</span>
+                            <span class="tech-tag">IWR6843AOP</span>
+                            <span class="tech-tag">RF / Radar</span>
+                            <span class="tech-tag">JSON</span>
                         </div>
                     </div>
                     <div class="project-card">
                         <div class="project-year">2022</div>
                         <div class="project-title">Custom OS Kernel</div>
-                        <div class="project-desc">Monolithic kernel via QEMU x86. Round-Robin multitasking with context switching, 32-bit protected mode, virtual memory with paging, and interrupt routing.</div>
+                        <div class="project-desc">Monolithic x86 kernel implementing round-robin scheduling, context switching, paged virtual memory, and interrupt handling in 32-bit protected mode. Developed and run under QEMU.</div>
                         <div class="project-tags">
                             <span class="tech-tag">C</span>
                             <span class="tech-tag">x86 ASM</span>
@@ -1356,9 +1323,42 @@
                         <a href="https://github.com/ealekseyev/Monos-Virtuics" class="project-link" target="_blank" rel="noopener">GitHub &rarr;</a>
                     </div>
                     <div class="project-card">
+                        <div class="project-year">2026</div>
+                        <div class="project-title">MSPM0-CAN-controller</div>
+                        <div class="project-desc">SPI driver for the MCP2515 CAN controller on TI's MSPM0G3507 microcontroller, enabling CAN bus communication from MSPM0 firmware.</div>
+                        <div class="project-tags">
+                            <span class="tech-tag">TI MSPM0</span>
+                            <span class="tech-tag">MCP2515</span>
+                            <span class="tech-tag">SPI</span>
+                            <span class="tech-tag">RTOS</span>
+                        </div>
+                        <a href="https://github.com/ealekseyev/MSPM0-CAN-controller" class="project-link" target="_blank" rel="noopener">GitHub &rarr;</a>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-year">2022</div>
+                        <div class="project-title">Smart Football Analytics</div>
+                        <div class="project-desc">Instrumented football with accelerometer and gyroscope acquisition at over 1 kHz. Streams sensor data wirelessly to a real-time analysis interface for throw velocity, spin rate, and force metrics.</div>
+                        <div class="project-tags">
+                            <span class="tech-tag">Arduino</span>
+                            <span class="tech-tag">IMU</span>
+                            <span class="tech-tag">Python</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-year">2025</div>
+                        <div class="project-title">Smart Car Unlock</div>
+                        <div class="project-desc">Aftermarket keyless-entry system for a 2001 Mercedes C-Class, integrating RFID authentication and knock-pattern recognition on an ESP32. Led hardware and firmware integration through vehicle installation.</div>
+                        <div class="project-tags">
+                            <span class="tech-tag">ESP32</span>
+                            <span class="tech-tag">RFID</span>
+                            <span class="tech-tag">C++</span>
+                        </div>
+                        <a href="https://github.com/ealekseyev/SmartCarUnlock" class="project-link" target="_blank" rel="noopener">GitHub &rarr;</a>
+                    </div>
+                    <div class="project-card">
                         <div class="project-year">2019</div>
                         <div class="project-title">Autonomous Navigation Robot</div>
-                        <div class="project-desc">4-wheel drive robot using Raspberry Pi and ultrasonic sensors for obstacle avoidance and 2D environmental mapping with ROS navigation algorithms.</div>
+                        <div class="project-desc">Four-wheel-drive mobile robot integrating ROS navigation, ultrasonic obstacle sensing, and 2D environmental mapping on a Raspberry Pi.</div>
                         <div class="project-tags">
                             <span class="tech-tag">ROS</span>
                             <span class="tech-tag">Raspberry Pi</span>
@@ -1368,7 +1368,7 @@
                     <div class="project-card">
                         <div class="project-year">2020</div>
                         <div class="project-title">Light-Switch-ESP32</div>
-                        <div class="project-desc">ESP32-based IoT light switch with a custom 3D-printed bracket and servo motor. Integrated with the Google Home API to enable voice-controlled physical light actuation through smart speakers.</div>
+                        <div class="project-desc">Voice-controlled retrofit actuator for an existing wall switch, combining ESP32 firmware, a servo mechanism, and a custom 3D-printed mount with Google Home integration.</div>
                         <div class="project-tags">
                             <span class="tech-tag">C++</span>
                             <span class="tech-tag">3D Printing</span>
@@ -1382,40 +1382,31 @@
             <div class="project-category" id="networking-projects" hidden>
                 <div class="projects-grid">
                     <div class="project-card">
-                        <div class="project-year">2026</div>
-                        <div class="project-title">EvansSidekick</div>
-                        <div class="project-desc">OpenClaw, but less buggy & specialized for my personal use</div>
-                        <div class="project-tags">
-                            <span class="tech-tag">Python</span>
-                        </div>
-                        <a href="https://github.com/ealekseyev/EvansSidekick" class="project-link" target="_blank" rel="noopener">GitHub &rarr;</a>
-                    </div>
-                    <div class="project-card">
                         <div class="project-year">2021</div>
                         <div class="project-title">arp_injection</div>
-                        <div class="project-desc">an arp packet writing tool written in C++ for linux</div>
+                        <div class="project-desc">Linux network utility for constructing and transmitting ARP packets, implemented in C++.</div>
                         <div class="project-tags">
                             <span class="tech-tag">CMake</span>
                         </div>
                         <a href="https://github.com/ealekseyev/arp_injection" class="project-link" target="_blank" rel="noopener">GitHub &rarr;</a>
                     </div>
                     <div class="project-card">
-                        <div class="project-year">2021</div>
-                        <div class="project-title">detectDevices</div>
-                        <div class="project-desc">Detects when a device has connected to LAN by sniffing DHCP packets</div>
-                        <div class="project-tags">
-                            <span class="tech-tag">C++</span>
-                        </div>
-                        <a href="https://github.com/ealekseyev/detectDevices" class="project-link" target="_blank" rel="noopener">GitHub &rarr;</a>
-                    </div>
-                    <div class="project-card">
                         <div class="project-year">2020</div>
                         <div class="project-title">packsniff</div>
-                        <div class="project-desc">A packet sniffer coded in C++</div>
+                        <div class="project-desc">C++ packet capture tool for inspecting network traffic.</div>
                         <div class="project-tags">
                             <span class="tech-tag">C++</span>
                         </div>
                         <a href="https://github.com/ealekseyev/packsniff" class="project-link" target="_blank" rel="noopener">GitHub &rarr;</a>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-year">2021</div>
+                        <div class="project-title">detectDevices</div>
+                        <div class="project-desc">Passive LAN device discovery through DHCP traffic monitoring, implemented in C++.</div>
+                        <div class="project-tags">
+                            <span class="tech-tag">C++</span>
+                        </div>
+                        <a href="https://github.com/ealekseyev/detectDevices" class="project-link" target="_blank" rel="noopener">GitHub &rarr;</a>
                     </div>
                 </div>
             </div>
@@ -1475,7 +1466,6 @@
                         <span class="skill-tag">SAM</span>
                         <span class="skill-tag">RF-DETR</span>
                         <span class="skill-tag">Autodistill</span>
-                        <span class="skill-tag">Vulkan</span>
                         <span class="skill-tag">BLAS</span>
                     </div>
                 </div>
@@ -1488,6 +1478,7 @@
                         <span class="skill-tag">OpenAPI</span>
                         <span class="skill-tag">FFmpeg</span>
                         <span class="skill-tag">Grafana Loki</span>
+                        <span class="skill-tag">Prometheus</span>
                         <span class="skill-tag">LangGraph</span>
                         <span class="skill-tag">scikit-learn</span>
                         <span class="skill-tag">PostgreSQL / SQLite</span>
@@ -1500,6 +1491,9 @@
                     <div class="skill-tags">
                         <span class="skill-tag">OpenAI-Compatible APIs</span>
                         <span class="skill-tag">Llama.cpp</span>
+                        <span class="skill-tag">vLLM</span>
+                        <span class="skill-tag">vLLM Router</span>
+                        <span class="skill-tag">LiteLLM</span>
                         <span class="skill-tag">Edge-Optimized VLM Inference</span>
                     </div>
                 </div>
