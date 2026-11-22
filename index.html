@@ -1136,21 +1136,24 @@
                     <div class="timeline">
                         <div class="timeline-item">
                             <span class="timeline-date">March 2026 &ndash; Present</span>
-                            <div class="timeline-title">Software Engineer</div>
+                            <div class="timeline-title">ML Applications Engineer</div>
                             <div class="timeline-org">Latticework Inc. &middot; Santa Clara, CA</div>
                             <ul class="timeline-bullets">
-                                <li>Built production vehicle ReID pipeline (YOLO + OSNet + PaddleOCR) on live RTSP streams with proximity-zone alerting; deployed and benchmarked on Orca1 edge accelerator</li>
-                                <li>Developed multi-camera face recognition attendance system using ArcFace embeddings + LanceDB vector store; designed for production access control and retail tracking use cases</li>
-                                <li>Led R&amp;D evaluation of VLMs (Qwen3.5, SmolVLM2, Gemma4 E2B, LLaVA, InternVL3.5) for retail anomaly detection; evaluated Vulkan, OpenVINO, CPU, and BLAS backends on Llama.cpp; optimized lightweight VLM serving achieving 700ms TTFT on laptop CPU</li>
+                                <li>Fine-tuned Qwen 3.5 0.8B for image description and transcription, raising acceptance from 12% to 73%; FP8 quantization delivered 8× throughput and 60× cost savings over the existing solution</li>
+                                <li>Owned document extraction, worker architecture, VLM inference, and embedding/reranking services powering BM25 and DiskANN hybrid search across PDF, DOCX, XLSX, and PPTX documents</li>
+                                <li>Built an end-to-end data annotation and model-training platform, from web-scraped data collection and VLM-assisted filtering to SAM3 batch annotation and a YOLO training microservice with a live UI</li>
+                                <li>Collaboratively quantized, profiled, and batched SAM3.1 for cloud inference, achieving 120+ FPS on RTX 5090 hardware to support more complex edge computer-vision applications</li>
+                                <li>Stood up internal LLM infrastructure across multiple RTX PRO 6000 GPUs, including load balancing, inference metering, serving-engine benchmarks, and production reliability fixes</li>
+                                <li>Interviewed 15+ engineering candidates and mentored junior and intern hires through pairing, project guidance, and code reviews</li>
                             </ul>
                         </div>
                         <div class="timeline-item">
-                            <span class="timeline-date">Sept 2025 &ndash; March 2026</span>
+                            <span class="timeline-date">September 2025 &ndash; March 2026</span>
                             <div class="timeline-title">Mechatronics Engineer Intern</div>
                             <div class="timeline-org">Beagle Technology, Inc. &middot; Dublin, CA</div>
                             <ul class="timeline-bullets">
-                                <li>Improved reliability of CV pipeline for RealSense camera-based depth and height estimation of grapevines to run on Jetson Orin Nano hardware; emphasis on robust edge-case handling and temporal filtering</li>
-                                <li>Sole firmware owner (C++): rewrote I/O PCB codebase supporting 4 PCB revisions, 2 machine types, 12-channel relay + 5-channel proportional valve; designed CAN bus communication layer to NVIDIA Jetson</li>
+                                <li>Owned firmware in C++, rewriting the I/O PCB codebase to support 4 PCB revisions, 3 machine types, a 12-channel relay, and a 5-channel proportional valve; designed CAN bus communication with NVIDIA Jetson</li>
+                                <li>Improved a RealSense computer-vision pipeline for grapevine depth and height estimation on Jetson Orin Nano by resolving edge-case failures and applying temporal filtering to reduce measurement noise</li>
                                 <li>Contributed to R&amp;D and field deployment of prototype agricultural robotics products, shipping computer vision improvements and PID tuning directly to automated machinery at customer sites</li>
                             </ul>
                         </div>
